@@ -1,8 +1,9 @@
 <h1 align="center"> Convesor Alura Challenge</h1>
-<b> Alura Challenge Oracle Next Education - backend Java - </b>
+<br>
+#<b> Alura Challenge Oracle Next Education - backend Java - </b>
 
 ![conversor](https://user-images.githubusercontent.com/112147679/223643165-f5b701a3-e604-429a-9517-5d41fccfa3ad.png)
-<br>
+
 ![currency ](https://user-images.githubusercontent.com/112147679/223802155-5a753404-0d4e-44c4-ab14-1438667a8516.png)
 
 
