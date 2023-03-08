@@ -3,7 +3,8 @@
 
 ![conversor](https://user-images.githubusercontent.com/112147679/223643165-f5b701a3-e604-429a-9517-5d41fccfa3ad.png)
 <br>
-![currency](https://user-images.githubusercontent.com/112147679/223643256-4b6787d9-808f-481e-8d17-72b524c553e4.png)
+![currency ](https://user-images.githubusercontent.com/112147679/223802155-5a753404-0d4e-44c4-ab14-1438667a8516.png)
+
 
 
 <h2 align="center">Welcome to my Java Converter project!</h2>
