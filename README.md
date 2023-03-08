@@ -1,10 +1,10 @@
 <h1 align="center"> Currency-converter</h1>
 <b>Currency converter Alura Challenge Oracle Next Education Backend </b>
-
+<h2> Menu </h2>
 ![conversor](https://user-images.githubusercontent.com/112147679/223641410-a4550ecf-1f22-4581-9d3d-961f951b8f9c.png)
 
 <br>
-<br>
+<h2> Currency Converter</h2>
 ![currency](https://user-images.githubusercontent.com/112147679/223641438-b4f34c97-838a-4dac-8543-a7378258f86b.png)
 
 <h2 align="center">Welcome to my Java Currency Converter project!</h2>
