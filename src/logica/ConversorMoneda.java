@@ -16,59 +16,29 @@ public class ConversorMoneda {
 
     public static double convertir(double cantidad, String de, String a) {
         // Definimos las tasas de conversión según las monedas
-        double tasa;
-        switch(de) {
-            case "COP":
-                tasa = getTasaConversion(a);
-                break;
-            case "USD":
-                tasa = USD_COP;
-                break;
-            case "EUR":
-                tasa = EUR_COP;
-                break;
-            case "GBP":
-                tasa = GBP_COP;
-                break;
-            case "JPY":
-                tasa = JPY_COP;
-                break;
-            case "KRW":
-                tasa = KRW_COP;
-                break;
-            default:
-                tasa = 0.0;
-                break;
-        }
+        double tasa = switch (de) {
+            case "COP" -> getTasaConversion(a);
+            case "USD" -> USD_COP;
+            case "EUR" -> EUR_COP;
+            case "GBP" -> GBP_COP;
+            case "JPY" -> JPY_COP;
+            case "KRW" -> KRW_COP;
+            default -> 0.0;
+        };
         // Calculamos la cantidad convertida y la devolvemos
         return cantidad * tasa;
     }
 
     private static double getTasaConversion(String moneda) {
-        double tasa;
-        switch(moneda) {
-            case "COP":
-                tasa = COP_COP;
-                break;
-            case "USD":
-                tasa = COP_USD;
-                break;
-            case "EUR":
-                tasa = COP_EUR;
-                break;
-            case "GBP":
-                tasa = COP_GBP;
-                break;
-            case "JPY":
-                tasa = COP_JPY;
-                break;
-            case "KRW":
-                tasa = COP_KRW;
-                break;
-            default:
-                tasa = 0.0;
-                break;
-        }
+        double tasa = switch (moneda) {
+            case "COP" -> COP_COP;
+            case "USD" -> COP_USD;
+            case "EUR" -> COP_EUR;
+            case "GBP" -> COP_GBP;
+            case "JPY" -> COP_JPY;
+            case "KRW" -> COP_KRW;
+            default -> 0.0;
+        };
         return  tasa;
     }
 

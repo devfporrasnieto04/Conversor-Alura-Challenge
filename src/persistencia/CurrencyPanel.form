@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="persistencia.CurrencyPanel">
-  <grid id="27dc6" binding="currencyPanel" layout-manager="GridLayoutManager" row-count="13" column-count="11" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="currencyPanel" layout-manager="GridLayoutManager" row-count="13" column-count="44" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="25" y="20" width="607" height="390"/>
+      <xy x="25" y="20" width="927" height="390"/>
     </constraints>
     <properties/>
     <border type="none" title="Currency Converter"/>
     <children>
       <component id="2965c" class="javax.swing.JComboBox" binding="monedaDestino">
         <constraints>
-          <grid row="7" column="0" row-span="2" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="7" column="1" row-span="2" col-span="9" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="211" height="30"/>
+          </grid>
         </constraints>
         <properties>
           <model>
@@ -25,7 +27,9 @@
       </component>
       <component id="2cf47" class="javax.swing.JComboBox" binding="monedaOrigen">
         <constraints>
-          <grid row="4" column="0" row-span="2" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="4" column="1" row-span="2" col-span="10" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="211" height="30"/>
+          </grid>
         </constraints>
         <properties>
           <model>
@@ -40,7 +44,7 @@
       </component>
       <component id="19164" class="javax.swing.JButton" binding="convert">
         <constraints>
-          <grid row="9" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="9" column="1" row-span="1" col-span="11" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Convert"/>
@@ -48,7 +52,9 @@
       </component>
       <component id="c15a1" class="javax.swing.JLabel" binding="textMonedaOrigen">
         <constraints>
-          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="0" row-span="1" col-span="34" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="211" height="18"/>
+          </grid>
         </constraints>
         <properties>
           <text value="Seleccione Moneda de Origen"/>
@@ -56,7 +62,9 @@
       </component>
       <component id="1ba40" class="javax.swing.JLabel" binding="textMonedaDestino">
         <constraints>
-          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="6" column="0" row-span="1" col-span="34" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="211" height="18"/>
+          </grid>
         </constraints>
         <properties>
           <text value="Seleccione Moneda de Destino"/>
@@ -64,7 +72,9 @@
       </component>
       <component id="768d5" class="javax.swing.JLabel" binding="textMonto">
         <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="0" row-span="1" col-span="34" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="211" height="18"/>
+          </grid>
         </constraints>
         <properties>
           <text value="Ingrese el monto a convertir"/>
@@ -72,19 +82,21 @@
       </component>
       <component id="33e54" class="javax.swing.JSeparator" binding="separator1">
         <constraints>
-          <grid row="2" column="0" row-span="1" col-span="11" vsize-policy="6" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="0" row-span="1" col-span="44" vsize-policy="6" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties/>
       </component>
       <component id="97606" class="javax.swing.JSeparator" binding="separator2">
         <constraints>
-          <grid row="11" column="0" row-span="1" col-span="11" vsize-policy="6" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="11" column="0" row-span="1" col-span="44" vsize-policy="6" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties/>
       </component>
       <component id="72792" class="javax.swing.JLabel" binding="resultLabel">
         <constraints>
-          <grid row="10" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="10" column="0" row-span="1" col-span="36" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="48" height="46"/>
+          </grid>
         </constraints>
         <properties>
           <font name="JetBrains Mono" size="14" style="1"/>
@@ -93,7 +105,7 @@
       </component>
       <component id="ace35" class="javax.swing.JFormattedTextField" binding="monto">
         <constraints>
-          <grid row="1" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+          <grid row="1" column="1" row-span="1" col-span="13" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
@@ -106,7 +118,9 @@
       </component>
       <component id="bcc11" class="javax.swing.JButton" binding="menuButton">
         <constraints>
-          <grid row="12" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="12" column="3" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="78" height="30"/>
+          </grid>
         </constraints>
         <properties>
           <text value="Menu"/>
@@ -114,7 +128,7 @@
       </component>
       <component id="24c7" class="javax.swing.JButton" binding="salirBtn">
         <constraints>
-          <grid row="12" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="12" column="8" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Salir"/>

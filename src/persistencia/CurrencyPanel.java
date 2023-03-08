@@ -63,7 +63,7 @@ public class CurrencyPanel extends JFrame implements conversorSetings{
     @Override
     public void configurarVentana() {
         setTitle("Currency Converter");
-        setSize(400,328);
+        setSize(300,428);
         setVisible(true);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
