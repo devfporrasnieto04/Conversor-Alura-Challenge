@@ -1,8 +1,9 @@
 <h1 align="center"> Currency-converter</h1>
 Currency converter Alura Challenge Oracle Next Education Backend 
 
+![conversor](https://user-images.githubusercontent.com/112147679/223641410-a4550ecf-1f22-4581-9d3d-961f951b8f9c.png)
+![currency](https://user-images.githubusercontent.com/112147679/223641438-b4f34c97-838a-4dac-8543-a7378258f86b.png)
 
-<img align = "center">![currency converter logo Alura challenge Oracle Next Education](https://user-images.githubusercontent.com/112147679/220490844-6734c566-7c3c-429f-b173-fb9b232263f7.png)</img>
 
 <h2 align="center">Welcome to my Java Currency Converter project!</h2>
 
