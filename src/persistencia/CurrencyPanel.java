@@ -17,7 +17,7 @@ public class CurrencyPanel extends JFrame implements conversorSetings{
     private JLabel textMonto;
     private JFormattedTextField monto;
     private JLabel textMonedaOrigen;
-    private ConversorMoneda conversorMoneda = new ConversorMoneda();
+    private final ConversorMoneda conversorMoneda = new ConversorMoneda();
     private JComboBox <String> monedaOrigen;
     private JLabel textMonedaDestino;
     private JComboBox <String> monedaDestino;
@@ -53,13 +53,6 @@ public class CurrencyPanel extends JFrame implements conversorSetings{
         });
 
     }
-
-//    public static void main(String[] args) {
-//        CurrencyPanel currencyPanel = new CurrencyPanel();
-//        currencyPanel.setVisible(true);
-//    }
-
-
     @Override
     public void configurarVentana() {
         setTitle("Currency Converter");
@@ -69,8 +62,6 @@ public class CurrencyPanel extends JFrame implements conversorSetings{
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
     }
-
-
 
     @Override
     public void agregarPanel() {
@@ -93,17 +84,18 @@ public class CurrencyPanel extends JFrame implements conversorSetings{
                try {
                    // Obtener los valores del monto y las monedas seleccionadas
                    double montoValor = Double.parseDouble(monto.getText());
-                   String monedaOrigenSeleccionada = monedaOrigen.getSelectedItem().toString();
-                   String monedaDestinoSeleccionada = monedaDestino.getSelectedItem().toString();
+                   String monedaOrigenSeleccionada = Objects.requireNonNull(monedaOrigen.getSelectedItem()).toString();
+                   String monedaDestinoSeleccionada = Objects.requireNonNull(monedaDestino.getSelectedItem()).toString();
 
                    // Realizar la conversión utilizando el conversor de moneda
-                   double resultado = conversorMoneda.convertir(montoValor, monedaOrigenSeleccionada, monedaDestinoSeleccionada);
+                   double resultado = ConversorMoneda.convertir(montoValor, monedaOrigenSeleccionada, monedaDestinoSeleccionada);
 
                    // Mostrar el resultado en el JLabel
                    resultLabel.setText("Result: "+String.valueOf(resultado));
                } catch (NumberFormatException ex) {
                    // Manejar la excepción si el monto no es un número válido
                    resultLabel.setText("Error: monto inválido");
+
                }
            }
        });
@@ -125,8 +117,8 @@ public class CurrencyPanel extends JFrame implements conversorSetings{
         });
     }
 
-    private void configComboboxMonedas(){
-      // monedaOrigen = new JComboBox<>(conversorMoneda.getMonedas());
+    public static void main(String[] args) {
+        System.out.println();
     }
 }
 

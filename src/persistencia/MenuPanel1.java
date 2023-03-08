@@ -16,6 +16,7 @@ public class MenuPanel1 extends JFrame {
     private JSeparator separator1 = new JSeparator();
     private CurrencyPanel currencyPanel;
     private ConversorMoneda conversorMoneda;
+    private TemperaturePanel temperaturePanel;
 
     public MenuPanel1() {
 
@@ -72,6 +73,10 @@ public class MenuPanel1 extends JFrame {
                         break;
                     case "Conversor de temperatura":
                         //Lógica para el conversor de temperatura
+                        temperaturePanel = new TemperaturePanel();
+                        panelMenu.setVisible(false);
+                        temperaturePanel.setVisible(true);
+                        dispose();
                         break;
                     case "Conversor de unidades":
                         //Lógica para el conversor de unidades

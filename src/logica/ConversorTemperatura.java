@@ -2,7 +2,7 @@ package logica;
 
 public class ConversorTemperatura {
 
-    private double convertir(double valor, String de, String a){
+    public double convertir(double valor, String de, String a){
         double temperaturaConvertida = 0.0;
 
         switch (de) {
