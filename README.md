@@ -1,10 +1,14 @@
-<h1 align="center"> Currency-converter</h1>
-Currency converter Alura Challenge Oracle Next Education Backend 
+<h1 align="center"> Convesor Alura Challenge</h1>
+<br>
+#<b> Alura Challenge Oracle Next Education - backend Java - </b>
+
+![conversor](https://user-images.githubusercontent.com/112147679/223643165-f5b701a3-e604-429a-9517-5d41fccfa3ad.png)
+
+![currency ](https://user-images.githubusercontent.com/112147679/223802155-5a753404-0d4e-44c4-ab14-1438667a8516.png)
 
 
-<img align = "center">![currency converter logo Alura challenge Oracle Next Education](https://user-images.githubusercontent.com/112147679/220490844-6734c566-7c3c-429f-b173-fb9b232263f7.png)</img>
 
-<h2 align="center">Welcome to my Java Currency Converter project!</h2>
+<h2 align="center">Welcome to my Java Converter project!</h2>
 
 This project is a console program that allows you to convert different currencies using current exchange rates. Below is a brief description of how to use and run the program.
 
