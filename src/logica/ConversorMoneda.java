@@ -1,70 +1,84 @@
 package logica;
 
 public class ConversorMoneda {
-    private static final double USD_RATE = 0.00028;
-    private static final double EUR_RATE = 0.00023;
-    private static final double GBP_RATE = 0.00020;
-    private static final double JPY_RATE = 0.030;
-    private static final double KRW_RATE = 0.00032;
-    private static final double COP_RATE = 0.00027;
 
-    private String[] monedas = {"USD", "EUR", "GBP", "JPY", "KRW"};
+    private static final double COP_USD = 0.00021;
+    private static final double COP_EUR = 0.00020;
+    private static final double COP_GBP = 0.00018;
+    private static final double COP_JPY = 0.029;
+    private static final double COP_KRW = 0.28;
+    private static final double USD_COP = 4761.00;
+    private static final double EUR_COP = 5014.38;
+    private static final double GBP_COP = 5628.76;
+    private static final double JPY_COP = 34.57;
+    private static final double KRW_COP = 3.60;
+    private static final double COP_COP = 1;
 
-    public String[] getMonedas() {
-        return monedas;
-    }
-
-    public double convertir(double monedaOrigen, String de, String a) {
-        double tasaOrigen, tasaDestino;
-        tasaOrigen = switch (de) {
-            case "NULL" -> 1;
-
-            case "USD" -> USD_RATE;
-            case "EUR" -> EUR_RATE;
-            case "GBP" -> GBP_RATE;
-            case "JPY" -> JPY_RATE;
-            case "KRW" -> KRW_RATE;
-            default ->  COP_RATE;
-        };
-
-       tasaDestino = switch (a) {
-           case "NULL" -> 1;
-
-           case "USD" -> USD_RATE;
-           case "EUR" -> EUR_RATE;
-           case "GBP" -> GBP_RATE;
-           case "JPY" -> JPY_RATE;
-           case "KRW" -> KRW_RATE;
-           default ->   COP_RATE;
-        };
-
-        return  tasaOrigen * tasaDestino;
-    }
-
-    public double getValorMoneda(String moneda) {
-        double tasaOrigen;
-        switch (moneda) {
+    public static double convertir(double cantidad, String de, String a) {
+        // Definimos las tasas de conversión según las monedas
+        double tasa;
+        switch(de) {
             case "COP":
-                tasaOrigen = 1;
+                tasa = getTasaConversion(a);
                 break;
             case "USD":
-                tasaOrigen = USD_RATE;
+                tasa = USD_COP;
                 break;
             case "EUR":
-                tasaOrigen = EUR_RATE;
+                tasa = EUR_COP;
                 break;
             case "GBP":
-                tasaOrigen = GBP_RATE;
+                tasa = GBP_COP;
                 break;
             case "JPY":
-                tasaOrigen = JPY_RATE;
+                tasa = JPY_COP;
                 break;
             case "KRW":
-                tasaOrigen = KRW_RATE;
+                tasa = KRW_COP;
                 break;
             default:
-                throw new IllegalArgumentException("Moneda de origen no válida");
+                tasa = 0.0;
+                break;
         }
-        return tasaOrigen;
+        // Calculamos la cantidad convertida y la devolvemos
+        return cantidad * tasa;
     }
+
+    private static double getTasaConversion(String moneda) {
+        double tasa;
+        switch(moneda) {
+            case "COP":
+                tasa = COP_COP;
+                break;
+            case "USD":
+                tasa = COP_USD;
+                break;
+            case "EUR":
+                tasa = COP_EUR;
+                break;
+            case "GBP":
+                tasa = COP_GBP;
+                break;
+            case "JPY":
+                tasa = COP_JPY;
+                break;
+            case "KRW":
+                tasa = COP_KRW;
+                break;
+            default:
+                tasa = 0.0;
+                break;
+        }
+        return  tasa;
+    }
+
+
+
+
+//   public static void main(String[] args) {
+//        ConversorMoneda conversorMoneda = new ConversorMoneda();
+//            System.out.println(conversorMoneda.convertir(1,"COP", "EUR"));
+//    }
 }
+
+

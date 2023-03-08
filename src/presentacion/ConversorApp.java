@@ -1,8 +1,6 @@
 package presentacion;
 
 
-import logica.ConversorMoneda;
-import persistencia.CurrencyPanel1;
 import persistencia.MenuPanel1;
 
 public class ConversorApp {
