@@ -1,40 +1,45 @@
-<h1 align="center"> Convesor Alura Challenge</h1>
+<h1 align="center"> Convesor Alura Challenge :open_file_folder:</h1>
 <br>
-#<b> Alura Challenge Oracle Next Education - backend Java - </b>
+:large_orange_diamond:<b> Alura Challenge Oracle Next Education - backend Java - </b>
 
-<h2 align="center">Welcome to my Java Converter project!</h2>
+<h2 align="center">Welcome to my Java Converter project! :currency_exchange: :snowflake: :triangular_ruler:</h2>
 
-This project is a console program that allows you to convert different currencies using current exchange rates. Below is a brief description of how to use and run the program.
+This project is a console program that allows you to convert different currencies, mass unit and temperature tipes. Below is a brief description of how to use and run the program.
 
-#Prerequisites
+:floppy_disk: Prerequisites
 
 To run this program, you will need to have the following installed on your system:
 
 - JDK (version 8 or higher)
 - Git (optional, but recommended for cloning the repository)
 
-#Usage instructions
+:computer: Usage instructions
 Options:
 - Clone the repository or download the source code to your computer.
 - Open a console and navigate to the directory where the ConversorApp.java file is located.
-- Download ConversorAluraChallenge.jar, 
+- Download ConversorAluraChallenge.jar, then open terminal and execute .jar with the command 
+<br><b><i> java -jar "Conversor Alura Challenge.jar"</i></b>
+- you can find and download the .jar file in the code by rute: out/artifacts/Conversor_Alura_Challenge_jar/Conversor Alura Challenge.jar
 - Follow the on-screen instructions to convert a quantity from one currency, temperature and mass unit to another.
 
-#Contributing
+:ok_hand: Contributing
 
 If you wish to contribute to the project, please open a new pull request or report an issue on the Issues page.
 
-#Credits
+:copyright: Credits
 
 This project was created by Francisco Camilo Porras Nieto.
 
-#License
+:tm: License
 
 This project is licensed under the MIT license. You can see more details in the LICENSE file.
-# view 
+
+
+<h1 align="center"> # view :eyes:</h1>
+
 ![menu](https://user-images.githubusercontent.com/112147679/223951094-3a48ec0d-ded2-4a12-aa4e-f53dc15a310c.png)
 ![currency](https://user-images.githubusercontent.com/112147679/223951137-9b2aa1ce-a049-4eaa-b524-2b6029beb5ff.png)
 ![temperature](https://user-images.githubusercontent.com/112147679/223951178-77777370-d852-45ea-9c51-d8293e9f809f.png)
-![massUnit](https://user-images.githubusercontent.com/112147679/223951207-09f5eabe-b20e-4165-b060-10c9560761ae.png)
+![massUnit](https://user-images.githubusercontent.com/112147679/223951207-09f5eabe-b20e-4165-b060-10c9560761ae.png) 
 
 
