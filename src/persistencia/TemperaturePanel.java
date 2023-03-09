@@ -111,9 +111,4 @@ public class TemperaturePanel extends JFrame implements conversorSetings {
             }
         });
     }
-
-    public static void main(String[] args) {
-        TemperaturePanel temperaturePanel1 = new TemperaturePanel();
-        temperaturePanel1.setVisible(true);
-    }
 }

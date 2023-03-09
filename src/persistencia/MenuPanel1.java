@@ -78,8 +78,9 @@ public class MenuPanel1 extends JFrame {
                         temperaturePanel.setVisible(true);
                         dispose();
                         break;
-                    case "Conversor de unidades":
+                    case "Conversor de unidades de masa":
                         //Lógica para el conversor de unidades
+
                         break;
                     default:
                         break;

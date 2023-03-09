@@ -116,10 +116,6 @@ public class CurrencyPanel extends JFrame implements conversorSetings{
             }
         });
     }
-
-    public static void main(String[] args) {
-        System.out.println();
-    }
 }
 
 

@@ -29,7 +29,7 @@
           <model>
             <item value="Conversor de moneda"/>
             <item value="Conversor de temperatura"/>
-            <item value="Conversor de unidades"/>
+            <item value="Conversor de unidades de masa"/>
           </model>
         </properties>
       </component>

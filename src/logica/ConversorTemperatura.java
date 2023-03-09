@@ -33,9 +33,8 @@ public class ConversorTemperatura {
                     temperaturaConvertida = K_F;
                 }
             }
-            default -> {
-                System.out.println("Tipo de temperatura no soportada.");
-            }
+            default -> System.out.println("Tipo de temperatura no soportada.");
+
         }
         return temperaturaConvertida;
     }
