@@ -76,14 +76,13 @@ public class TemperaturePanel extends JFrame implements conversorSetings {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    // Obtener los valores del monto y las monedas seleccionadas
+                    // Obtener los datos de valor y guardarlos en una variable
                     double temperaturaValor = Double.parseDouble(valor.getText());
                     String temperaturaOrigenSeleccionada = Objects.requireNonNull(comboBoxTemperaturaOrigen.getSelectedItem()).toString();
                     String temperaturaDestinoSeleccionada = Objects.requireNonNull(comboBoxTemperaturaDestino.getSelectedItem()).toString();
 
-                    // Realizar la conversión utilizando el conversor de moneda
+                    // Realizar la conversión utilizando el conversor de temperatura mediante el metodo convertir
                     double resultado = conversorTemperatura.convertir(temperaturaValor,temperaturaOrigenSeleccionada,temperaturaDestinoSeleccionada);
-
                     // Mostrar el resultado en el JLabel
                     textResult.setText("Result: "+String.valueOf(resultado));
                 } catch (NumberFormatException ex) {

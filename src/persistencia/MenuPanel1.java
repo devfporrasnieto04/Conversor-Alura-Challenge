@@ -13,10 +13,11 @@ public class MenuPanel1 extends JFrame {
     private JComboBox<String> comboBoxOpciones;
     private JPanel panelMenu;
     private JLabel textField1;
-    private JSeparator separator1 = new JSeparator();
+    private JSeparator separator1;
     private CurrencyPanel currencyPanel;
     private ConversorMoneda conversorMoneda;
     private TemperaturePanel temperaturePanel;
+    private MasaPanel masaPanel;
 
     public MenuPanel1() {
 
@@ -65,25 +66,26 @@ public class MenuPanel1 extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String opcionSeleccionada = Objects.requireNonNull(comboBoxOpciones.getSelectedItem()).toString();
                 switch (opcionSeleccionada) {
-                    case "Conversor de moneda":
+                    case "Conversor de moneda" -> {
                         currencyPanel = new CurrencyPanel();
                         panelMenu.setVisible(false);
                         currencyPanel.setVisible(true);
                         dispose();
-                        break;
-                    case "Conversor de temperatura":
+                    }
+                    case "Conversor de temperatura" -> {
                         //Lógica para el conversor de temperatura
                         temperaturePanel = new TemperaturePanel();
                         panelMenu.setVisible(false);
                         temperaturePanel.setVisible(true);
                         dispose();
-                        break;
-                    case "Conversor de unidades de masa":
+                    }
+                    case "Conversor de unidades de masa" -> {
                         //Lógica para el conversor de unidades
-
-                        break;
-                    default:
-                        break;
+                        masaPanel = new MasaPanel();
+                        panelMenu.setVisible(false);
+                        masaPanel.setVisible(true);
+                        dispose();
+                    }
                 }
             }
         });

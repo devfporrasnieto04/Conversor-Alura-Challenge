@@ -32,7 +32,6 @@ public class CurrencyPanel extends JFrame implements conversorSetings{
 
     public CurrencyPanel() {
         configurarVentana();
-        agregarPanel();
         mostrarPanel();
         configBtns();
         configMonto();
@@ -67,6 +66,7 @@ public class CurrencyPanel extends JFrame implements conversorSetings{
     public void agregarPanel() {
 
     }
+
 
     @Override
     public void mostrarPanel() {
