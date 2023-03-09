@@ -1,21 +1,16 @@
 package persistencia;
 
-import logica.ConversorMoneda;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.Objects;
 
 public class MenuPanel1 extends JFrame {
 
-    private final String[] opciones = {"Conversor de moneda", "Conversor de temperatura", "Conversor de unidades"};
     private JComboBox<String> comboBoxOpciones;
     private JPanel panelMenu;
     private JLabel textField1;
     private JSeparator separator1;
     private CurrencyPanel currencyPanel;
-    private ConversorMoneda conversorMoneda;
     private TemperaturePanel temperaturePanel;
     private MasaPanel masaPanel;
 
@@ -61,37 +56,32 @@ public class MenuPanel1 extends JFrame {
     }
 
     private void configComboboxOpciones() {
-        comboBoxOpciones.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String opcionSeleccionada = Objects.requireNonNull(comboBoxOpciones.getSelectedItem()).toString();
-                switch (opcionSeleccionada) {
-                    case "Conversor de moneda" -> {
-                        currencyPanel = new CurrencyPanel();
-                        panelMenu.setVisible(false);
-                        currencyPanel.setVisible(true);
-                        dispose();
-                    }
-                    case "Conversor de temperatura" -> {
-                        //Lógica para el conversor de temperatura
-                        temperaturePanel = new TemperaturePanel();
-                        panelMenu.setVisible(false);
-                        temperaturePanel.setVisible(true);
-                        dispose();
-                    }
-                    case "Conversor de unidades de masa" -> {
-                        //Lógica para el conversor de unidades
-                        masaPanel = new MasaPanel();
-                        panelMenu.setVisible(false);
-                        masaPanel.setVisible(true);
-                        dispose();
-                    }
+        comboBoxOpciones.addActionListener(e -> {
+            String opcionSeleccionada = Objects.requireNonNull(comboBoxOpciones.getSelectedItem()).toString();
+            switch (opcionSeleccionada) {
+                case "Conversor de moneda" -> {
+                    //Lógica para el conversor de moneda
+                    currencyPanel = new CurrencyPanel();
+                    panelMenu.setVisible(false);
+                    currencyPanel.setVisible(true);
+                    dispose();
+                }
+                case "Conversor de temperatura" -> {
+                    //Lógica para el conversor de temperatura
+                    temperaturePanel = new TemperaturePanel();
+                    panelMenu.setVisible(false);
+                    temperaturePanel.setVisible(true);
+                    dispose();
+                }
+                case "Conversor de unidades de masa" -> {
+                    //Lógica para el conversor de unidades
+                    masaPanel = new MasaPanel();
+                    panelMenu.setVisible(false);
+                    masaPanel.setVisible(true);
+                    dispose();
                 }
             }
         });
     }
-
-
-
 }
 

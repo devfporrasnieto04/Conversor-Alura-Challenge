@@ -2,8 +2,6 @@ package persistencia;
 
 import logica.ConversorTemperatura;
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.Objects;
@@ -32,7 +30,9 @@ public class TemperaturePanel extends JFrame implements conversorSetings {
         configValor();
     }
 
-
+    /**
+     se crea este metodo para que el campo valor solo pueda recibir numeros entre 0 9 positivos
+     */
     private void configValor (){
         valor.addKeyListener(new KeyAdapter() {
             @Override
@@ -72,42 +72,30 @@ public class TemperaturePanel extends JFrame implements conversorSetings {
 
     @Override
     public void configBtns() {
-        convertButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    // Obtener los datos de valor y guardarlos en una variable
-                    double temperaturaValor = Double.parseDouble(valor.getText());
-                    String temperaturaOrigenSeleccionada = Objects.requireNonNull(comboBoxTemperaturaOrigen.getSelectedItem()).toString();
-                    String temperaturaDestinoSeleccionada = Objects.requireNonNull(comboBoxTemperaturaDestino.getSelectedItem()).toString();
+        convertButton.addActionListener(e -> {
+            try {
+                // Obtener los datos de valor y guardarlos en una variable
+                double temperaturaValor = Double.parseDouble(valor.getText());
+                String temperaturaOrigenSeleccionada = Objects.requireNonNull(comboBoxTemperaturaOrigen.getSelectedItem()).toString();
+                String temperaturaDestinoSeleccionada = Objects.requireNonNull(comboBoxTemperaturaDestino.getSelectedItem()).toString();
 
-                    // Realizar la conversión utilizando el conversor de temperatura mediante el metodo convertir
-                    double resultado = conversorTemperatura.convertir(temperaturaValor,temperaturaOrigenSeleccionada,temperaturaDestinoSeleccionada);
-                    // Mostrar el resultado en el JLabel
-                    textResult.setText("Result: "+String.valueOf(resultado));
-                } catch (NumberFormatException ex) {
-                    // Manejar la excepción si el monto no es un número válido
-                    textResult.setText("Error: monto inválido");
-
-                }
+                // Realizar la conversión utilizando el conversor de temperatura mediante el metodo convertir
+                double resultado = conversorTemperatura.convertir(temperaturaValor,temperaturaOrigenSeleccionada,temperaturaDestinoSeleccionada);
+                // Mostrar el resultado en el JLabel
+                textResult.setText("Result: "+String.valueOf(resultado));
+            } catch (NumberFormatException ex) {
+                // Manejar la excepción si el monto no es un número válido
+                textResult.setText("Error: monto inválido");
             }
         });
 
-        menuButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                MenuPanel1 menuPanel11 = new MenuPanel1();
-                menuPanel11.setVisible(true);
-                temperaturePanel.setVisible(false);
-                dispose();
-            }
+        menuButton.addActionListener(e -> {
+            MenuPanel1 menuPanel11 = new MenuPanel1();
+            menuPanel11.setVisible(true);
+            temperaturePanel.setVisible(false);
+            dispose();
         });
 
-        salirButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.exit(0);
-            }
-        });
+        salirButton.addActionListener(e -> System.exit(0));
     }
 }

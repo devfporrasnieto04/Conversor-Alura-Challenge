@@ -38,10 +38,4 @@ public class ConversorMasa {
         }
         return masaConvertida;
     }
-
-    public static void main(String[] args) {
-        ConversorMasa conversorMasa = new ConversorMasa();
-        System.out.println(conversorMasa.convertir(50,"K","G"));
-    }
-
 }

@@ -96,9 +96,4 @@ public class MasaPanel extends JFrame implements conversorSetings {
 
         salirButton.addActionListener(e -> System.exit(0));
     }
-
-    public static void main(String[] args) {
-        MasaPanel masaPanel1 = new MasaPanel();
-        masaPanel1.setVisible(true);
-    }
 }

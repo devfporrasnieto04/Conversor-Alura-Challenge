@@ -3,10 +3,14 @@ package persistencia;
 import logica.ConversorMoneda;
 
 import javax.swing.*;
+import javax.swing.text.DefaultFormatterFactory;
+import javax.swing.text.NumberFormatter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.text.DecimalFormat;
+import java.util.Locale;
 import java.util.Objects;
 
 
@@ -42,12 +46,10 @@ public class CurrencyPanel extends JFrame implements conversorSetings{
         monto.addKeyListener(new KeyAdapter() {
             @Override
             public void keyTyped(KeyEvent e) {
-                int Key = e.getKeyChar();
-                boolean numero = Key >= 48 && Key <= 57;
-                if(!numero){
+                char key = e.getKeyChar();
+                if (!Character.isDigit(key) && key != '.') {
                     e.consume();
                 }
-
             }
         });
 
@@ -86,12 +88,23 @@ public class CurrencyPanel extends JFrame implements conversorSetings{
                    double montoValor = Double.parseDouble(monto.getText());
                    String monedaOrigenSeleccionada = Objects.requireNonNull(monedaOrigen.getSelectedItem()).toString();
                    String monedaDestinoSeleccionada = Objects.requireNonNull(monedaDestino.getSelectedItem()).toString();
-
                    // Realizar la conversión utilizando el conversor de moneda
                    double resultado = ConversorMoneda.convertir(montoValor, monedaOrigenSeleccionada, monedaDestinoSeleccionada);
-
+                    // Obtener el Locale correspondiente a la moneda de destino
+                   Locale locale = switch (monedaDestinoSeleccionada) {
+                       case "COP" -> new Locale("es", "CO","$");
+                       case "USD" -> new Locale("en", "US","usd $");
+                       case "EUR" -> new Locale("es", "ES","€");
+                       case "GBP" -> new Locale("en", "GB","£");
+                       case "JPY" -> new Locale("ja", "JP","¥");
+                       case "KRW" -> new Locale("ko", "KR","₩");
+                       default -> Locale.getDefault(); // Si no se reconoce la moneda, se utiliza el Locale por defecto del sistema
+                   };
+                   // Dar formato al número utilizando DecimalFormat
+                   DecimalFormat df = new DecimalFormat("#,###.##");
+                   String resultadoFormateado = df.format(resultado);
                    // Mostrar el resultado en el JLabel
-                   resultLabel.setText("Result: "+String.valueOf(resultado));
+                   resultLabel.setText("Result: " + locale.getVariant() +" "+ resultadoFormateado);
                } catch (NumberFormatException ex) {
                    // Manejar la excepción si el monto no es un número válido
                    resultLabel.setText("Error: monto inválido");
