@@ -5,6 +5,7 @@ import logica.ConversorMasa;
 import javax.swing.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.text.DecimalFormat;
 import java.util.Objects;
 
 public class MasaPanel extends JFrame implements conversorSetings {
@@ -79,8 +80,11 @@ public class MasaPanel extends JFrame implements conversorSetings {
                 String masaDestinoSeleccionada = Objects.requireNonNull(Objects.requireNonNull(comboBoxMasaDestino.getSelectedItem()).toString());
                 // Realizar la conversión utilizando el conversor de unidad de medida mediante el metodo convertir
                 double resultado = conversorMasa.convertir(masaValor,masaOrigenSeleccionada,masaDestinoSeleccionada);
+                // Dar formato al número utilizando DecimalFormat
+                DecimalFormat df = new DecimalFormat("#,###.##");
+                String resultadoFormateado = df.format(resultado);
                 // Mostrar el resultado en el JLabel result
-                resultLabel.setText("Result: "+masaDestinoSeleccionada+" "+resultado);
+                resultLabel.setText("Result: "+masaDestinoSeleccionada+" "+resultadoFormateado);
             }catch (NumberFormatException ex){
                 // Manejar la excepción si el valor no es un número válido
                 resultLabel.setText("Error: valor inválido");

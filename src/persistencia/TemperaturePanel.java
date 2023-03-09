@@ -82,7 +82,7 @@ public class TemperaturePanel extends JFrame implements conversorSetings {
                 // Realizar la conversión utilizando el conversor de temperatura mediante el metodo convertir
                 double resultado = conversorTemperatura.convertir(temperaturaValor,temperaturaOrigenSeleccionada,temperaturaDestinoSeleccionada);
                 // Mostrar el resultado en el JLabel
-                textResult.setText("Result: "+String.valueOf(resultado));
+                textResult.setText("Result: "+temperaturaDestinoSeleccionada+" "+String.valueOf(resultado));
             } catch (NumberFormatException ex) {
                 // Manejar la excepción si el monto no es un número válido
                 textResult.setText("Error: monto inválido");
