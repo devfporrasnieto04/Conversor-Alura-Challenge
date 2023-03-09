@@ -14,10 +14,11 @@ To run this program, you will need to have the following installed on your syste
 - Git (optional, but recommended for cloning the repository)
 
 #Usage instructions
-
-Clone the repository or download the source code to your computer.
-Open a console and navigate to the directory where the ConversorApp.java file is located.
-Follow the on-screen instructions to convert a quantity from one currency, temperature and mass unit to another.
+Options:
+- Clone the repository or download the source code to your computer.
+- Open a console and navigate to the directory where the ConversorApp.java file is located.
+- Download ConversorAluraChallenge.jar, 
+- Follow the on-screen instructions to convert a quantity from one currency, temperature and mass unit to another.
 
 #Contributing
 
