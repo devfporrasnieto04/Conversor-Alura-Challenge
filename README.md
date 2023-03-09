@@ -16,10 +16,8 @@ To run this program, you will need to have the following installed on your syste
 #Usage instructions
 
 Clone the repository or download the source code to your computer.
-Open a console and navigate to the directory where the CurrencyConverter.java file is located.
-Compile the file by running the following command: javac CurrencyConverter.java.
-Run the program by typing the following command: java CurrencyConverter.
-Follow the on-screen instructions to convert a quantity from one currency to another.
+Open a console and navigate to the directory where the ConversorApp.java file is located.
+Follow the on-screen instructions to convert a quantity from one currency, temperature and mass unit to another.
 
 #Contributing
 
@@ -33,9 +31,9 @@ This project was created by Francisco Camilo Porras Nieto.
 
 This project is licensed under the MIT license. You can see more details in the LICENSE file.
 # view 
+![menu](https://user-images.githubusercontent.com/112147679/223951094-3a48ec0d-ded2-4a12-aa4e-f53dc15a310c.png)
+![currency](https://user-images.githubusercontent.com/112147679/223951137-9b2aa1ce-a049-4eaa-b524-2b6029beb5ff.png)
+![temperature](https://user-images.githubusercontent.com/112147679/223951178-77777370-d852-45ea-9c51-d8293e9f809f.png)
+![massUnit](https://user-images.githubusercontent.com/112147679/223951207-09f5eabe-b20e-4165-b060-10c9560761ae.png)
 
-![conversor](https://user-images.githubusercontent.com/112147679/223643165-f5b701a3-e604-429a-9517-5d41fccfa3ad.png)
 
-![currency ](https://user-images.githubusercontent.com/112147679/223802155-5a753404-0d4e-44c4-ab14-1438667a8516.png)
-
-![temperature](https://user-images.githubusercontent.com/112147679/223878552-5e1a30af-2344-4181-8228-46468bd45d11.png)
