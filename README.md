@@ -37,6 +37,9 @@ This project is licensed under the MIT license. You can see more details in the 
 
 <h1 align="center"> # view :eyes:</h1>
 
+
+https://user-images.githubusercontent.com/112147679/224115947-99a8a506-463d-4fa8-8c0c-abbc11d2d096.mp4
+
 ![menu](https://user-images.githubusercontent.com/112147679/223951094-3a48ec0d-ded2-4a12-aa4e-f53dc15a310c.png)
 ![currency](https://user-images.githubusercontent.com/112147679/223951137-9b2aa1ce-a049-4eaa-b524-2b6029beb5ff.png)
 ![temperature](https://user-images.githubusercontent.com/112147679/224110052-e2ed3aac-dbd8-4a0c-bece-e016617124f0.png)
