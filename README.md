@@ -20,7 +20,7 @@ Options:
 - Download ConversorAluraChallenge.jar, then open terminal and execute .jar file with the command below: 
 <br><b><i> java -jar "Conversor Alura Challenge.jar"</i></b>
 - You can download the .jar file in this link :point_down: <br>
- :link:<a href="https://drive.google.com/file/d/15kObEDzeigkrRegWaWxdRH1cHlCAihjV/view?usp=sharing" download> Download Conversor Alura Challenge.jar here</a> :link:
+ :link:<a href="https://drive.google.com/file/d/15kObEDzeigkrRegWaWxdRH1cHlCAihjV/view?usp=sharing" target="_blank"> Download Conversor Alura Challenge.jar here</a> :link:
 - Follow the on-screen instructions to convert a quantity from one currency, temperature and mass unit to another.
 
 :ok_hand: Contributing
