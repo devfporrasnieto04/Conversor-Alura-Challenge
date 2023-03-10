@@ -3,12 +3,11 @@ package persistencia;
 import logica.ConversorMoneda;
 
 import javax.swing.*;
-import javax.swing.text.DefaultFormatterFactory;
-import javax.swing.text.NumberFormatter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.Locale;
 import java.util.Objects;
@@ -109,6 +108,8 @@ public class CurrencyPanel extends JFrame implements conversorSetings{
                    // Manejar la excepción si el monto no es un número válido
                    resultLabel.setText("Error: monto inválido");
 
+               } catch (IOException ex) {
+                   throw new RuntimeException(ex);
                }
            }
        });

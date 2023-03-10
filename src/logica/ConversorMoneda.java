@@ -1,54 +1,71 @@
 package logica;
 
+import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.Properties;
+import org.json.JSONObject;
 public class ConversorMoneda {
-
-    private static final double COP_USD = 0.00021;
-    private static final double COP_EUR = 0.00020;
-    private static final double COP_GBP = 0.00018;
-    private static final double COP_JPY = 0.029;
-    private static final double COP_KRW = 0.28;
-    private static final double USD_COP = 4761.00;
-    private static final double EUR_COP = 5014.38;
-    private static final double GBP_COP = 5628.76;
-    private static final double JPY_COP = 34.57;
-    private static final double KRW_COP = 3.60;
-    private static final double COP_COP = 1;
-
-    public static double convertir(double cantidad, String de, String a) {
-        // Definimos las tasas de conversión según las monedas
-        double tasa = switch (de) {
-            case "COP" -> getTasaConversion(a);
-            case "USD" -> USD_COP;
-            case "EUR" -> EUR_COP;
-            case "GBP" -> GBP_COP;
-            case "JPY" -> JPY_COP;
-            case "KRW" -> KRW_COP;
-            default -> 0.0;
-        };
-        // Calculamos la cantidad convertida y la devolvemos
-        return cantidad * tasa;
+    private static final String PROPERTIES_FILE = "config.properties";
+    private static String apikey;
+    public ConversorMoneda() {
+        Properties propiedades = new Properties();
+        InputStream entrada = null;
+        try {
+            entrada = new FileInputStream(PROPERTIES_FILE);
+            // Carga las propiedades del archivo de configuración
+            propiedades.load(entrada);
+            // Obtiene la clave de la API
+           apikey = propiedades.getProperty("open_exchange_api_key");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        } finally {
+            if (entrada != null) {
+                try {
+                    entrada.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
-    private static double getTasaConversion(String moneda) {
-        double tasa = switch (moneda) {
-            case "COP" -> COP_COP;
-            case "USD" -> COP_USD;
-            case "EUR" -> COP_EUR;
-            case "GBP" -> COP_GBP;
-            case "JPY" -> COP_JPY;
-            case "KRW" -> COP_KRW;
-            default -> 0.0;
-        };
-        return  tasa;
+    public static double convertir(double cantidad, String de, String a) throws IOException {
+        double tasaDe = getTasaConversion(de);
+        double tasaA = getTasaConversion(a);
+        return cantidad * (1 / tasaDe) * tasaA;
     }
 
+    private static double getTasaConversion(String moneda) throws IOException {
+        URL url = new URL("https://api.exchangerate-api.com/v4/latest/COP");
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        connection.setRequestMethod("GET");
+        BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+        String inputLine;
+        StringBuilder response = new StringBuilder();
+        while ((inputLine = reader.readLine()) != null) {
+            response.append(inputLine);
+        }
+        reader.close();
+        JSONObject jsonObject = new JSONObject(response.toString());
+        JSONObject rates = jsonObject.getJSONObject("rates");
+        double tasa = 0.0;
+        switch (moneda) {
+            case "COP" -> tasa = 1.0;
+            case "USD" -> tasa = rates.getDouble("USD");
+            case "EUR" -> tasa = rates.getDouble("EUR");
+            case "GBP" -> tasa = rates.getDouble("GBP");
+            case "JPY" -> tasa = rates.getDouble("JPY");
+            case "KRW" -> tasa = rates.getDouble("KRW");
+            default -> tasa = 0.0;
+        }
+        if (tasa == 0.0) {
+            throw new IOException("No se encontró tasa de conversión para " + moneda);
+        }
+        return tasa;
+    }
 
-
-
-//   public static void main(String[] args) {
-//        ConversorMoneda conversorMoneda = new ConversorMoneda();
-//            System.out.println(conversorMoneda.convertir(1,"COP", "EUR"));
-//    }
 }
+
 
 
