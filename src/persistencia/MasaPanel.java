@@ -58,11 +58,6 @@ public class MasaPanel extends JFrame implements conversorSetings {
     }
 
     @Override
-    public void agregarPanel() {
-
-    }
-
-    @Override
     public void mostrarPanel() {
         getContentPane().removeAll();
         getContentPane().add(masaPanel);

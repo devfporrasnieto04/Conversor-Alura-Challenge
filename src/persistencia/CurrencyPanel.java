@@ -3,8 +3,6 @@ package persistencia;
 import logica.ConversorMoneda;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
@@ -30,17 +28,12 @@ public class CurrencyPanel extends JFrame implements conversorSetings{
     private JButton menuButton;
     private JButton salirBtn;
 
-
-
-
     public CurrencyPanel() {
         configurarVentana();
         mostrarPanel();
         configBtns();
         configMonto();
-
     }
-
     private void configMonto (){
         monto.addKeyListener(new KeyAdapter() {
             @Override
@@ -51,7 +44,6 @@ public class CurrencyPanel extends JFrame implements conversorSetings{
                 }
             }
         });
-
     }
     @Override
     public void configurarVentana() {
@@ -62,13 +54,6 @@ public class CurrencyPanel extends JFrame implements conversorSetings{
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
     }
-
-    @Override
-    public void agregarPanel() {
-
-    }
-
-
     @Override
     public void mostrarPanel() {
         getContentPane().removeAll();
@@ -76,59 +61,46 @@ public class CurrencyPanel extends JFrame implements conversorSetings{
         revalidate();
         repaint();
     }
-
     @Override
     public void configBtns() {
-       convert.addActionListener(new ActionListener() {
-           @Override
-           public void actionPerformed(ActionEvent e) {
-               try {
-                   // Obtener los valores del monto y las monedas seleccionadas
-                   double montoValor = Double.parseDouble(monto.getText());
-                   String monedaOrigenSeleccionada = Objects.requireNonNull(monedaOrigen.getSelectedItem()).toString();
-                   String monedaDestinoSeleccionada = Objects.requireNonNull(monedaDestino.getSelectedItem()).toString();
-                   // Realizar la conversión utilizando el conversor de moneda
-                   double resultado = ConversorMoneda.convertir(montoValor, monedaOrigenSeleccionada, monedaDestinoSeleccionada);
-                    // Obtener el Locale correspondiente a la moneda de destino
-                   Locale locale = switch (monedaDestinoSeleccionada) {
-                       case "COP" -> new Locale("es", "CO","$");
-                       case "USD" -> new Locale("en", "US","usd $");
-                       case "EUR" -> new Locale("es", "ES","€");
-                       case "GBP" -> new Locale("en", "GB","£");
-                       case "JPY" -> new Locale("ja", "JP","¥");
-                       case "KRW" -> new Locale("ko", "KR","₩");
-                       default -> Locale.getDefault(); // Si no se reconoce la moneda, se utiliza el Locale por defecto del sistema
-                   };
-                   // Dar formato al número utilizando DecimalFormat
-                   DecimalFormat df = new DecimalFormat("#,###.##");
-                   String resultadoFormateado = df.format(resultado);
-                   // Mostrar el resultado en el JLabel
-                   resultLabel.setText("Result: " + locale.getVariant() +" "+ resultadoFormateado);
-               } catch (NumberFormatException ex) {
-                   // Manejar la excepción si el monto no es un número válido
-                   resultLabel.setText("Error: monto inválido");
+       convert.addActionListener(e -> {
+           try {
+               // Obtener los valores del monto y las monedas seleccionadas
+               double montoValor = Double.parseDouble(monto.getText());
+               String monedaOrigenSeleccionada = Objects.requireNonNull(monedaOrigen.getSelectedItem()).toString();
+               String monedaDestinoSeleccionada = Objects.requireNonNull(monedaDestino.getSelectedItem()).toString();
+               // Realizar la conversión utilizando el conversor de moneda
+               double resultado = ConversorMoneda.convertir(montoValor, monedaOrigenSeleccionada, monedaDestinoSeleccionada);
+                // Obtener el Locale correspondiente a la moneda de destino
+               Locale locale = switch (monedaDestinoSeleccionada) {
+                   case "COP" -> new Locale("es", "CO","$");
+                   case "USD" -> new Locale("en", "US","usd $");
+                   case "EUR" -> new Locale("es", "ES","€");
+                   case "GBP" -> new Locale("en", "GB","£");
+                   case "JPY" -> new Locale("ja", "JP","¥");
+                   case "KRW" -> new Locale("ko", "KR","₩");
+                   default -> Locale.getDefault(); // Si no se reconoce la moneda, se utiliza el Locale por defecto del sistema
+               };
+               // Dar formato al número utilizando DecimalFormat
+               DecimalFormat df = new DecimalFormat("#,###.##");
+               String resultadoFormateado = df.format(resultado);
+               // Mostrar el resultado en el JLabel
+               resultLabel.setText("Result: " + locale.getVariant() +" "+ resultadoFormateado);
+           } catch (NumberFormatException ex) {
+               // Manejar la excepción si el monto no es un número válido
+               resultLabel.setText("Error: monto inválido");
 
-               } catch (IOException ex) {
-                   throw new RuntimeException(ex);
-               }
+           } catch (IOException ex) {
+               throw new RuntimeException(ex);
            }
        });
-        menuButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                MenuPanel1 menuPanel11 = new MenuPanel1();
-                menuPanel11.setVisible(true);
-                currencyPanel.setVisible(false);
-                dispose();
-            }
+        menuButton.addActionListener(e -> {
+            MenuPanel1 menuPanel11 = new MenuPanel1();
+            menuPanel11.setVisible(true);
+            currencyPanel.setVisible(false);
+            dispose();
         });
-
-        salirBtn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.exit(0);
-            }
-        });
+        salirBtn.addActionListener(e -> System.exit(0));
     }
 }
 

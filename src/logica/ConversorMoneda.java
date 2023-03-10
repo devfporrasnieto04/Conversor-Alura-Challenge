@@ -29,13 +29,11 @@ public class ConversorMoneda {
             }
         }
     }
-
     public static double convertir(double cantidad, String de, String a) throws IOException {
         double tasaDe = getTasaConversion(de);
         double tasaA = getTasaConversion(a);
         return cantidad * (1 / tasaDe) * tasaA;
     }
-
     private static double getTasaConversion(String moneda) throws IOException {
         URL url = new URL("https://api.exchangerate-api.com/v4/latest/COP");
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -49,7 +47,7 @@ public class ConversorMoneda {
         reader.close();
         JSONObject jsonObject = new JSONObject(response.toString());
         JSONObject rates = jsonObject.getJSONObject("rates");
-        double tasa = 0.0;
+        double tasa;
         switch (moneda) {
             case "COP" -> tasa = 1.0;
             case "USD" -> tasa = rates.getDouble("USD");
@@ -64,7 +62,6 @@ public class ConversorMoneda {
         }
         return tasa;
     }
-
 }
 
 
