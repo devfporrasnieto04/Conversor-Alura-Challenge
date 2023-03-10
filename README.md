@@ -17,9 +17,10 @@ To run this program, you will need to have the following installed on your syste
 Options:
 - Clone the repository or download the source code to your computer.
 - Open a console and navigate to the directory where the ConversorApp.java file is located.
-- Download ConversorAluraChallenge.jar, then open terminal and execute .jar with the command below: 
+- Download ConversorAluraChallenge.jar, then open terminal and execute .jar file with the command below: 
 <br><b><i> java -jar "Conversor Alura Challenge.jar"</i></b>
-- You can find and download the .jar file in the code by rute: out/artifacts/Conversor_Alura_Challenge_jar/Conversor Alura Challenge.jar
+- You can download the .jar file in this link :point_down: <br>
+ :link:<a href="https://drive.google.com/file/d/15kObEDzeigkrRegWaWxdRH1cHlCAihjV/view?usp=sharing" download> Download Conversor Alura Challenge.jar here</a> :link:
 - Follow the on-screen instructions to convert a quantity from one currency, temperature and mass unit to another.
 
 :ok_hand: Contributing
